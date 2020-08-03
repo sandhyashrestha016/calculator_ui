@@ -51,9 +51,22 @@ class _LightState extends State<Light> {
                             ),
                             child: Row(
                               children: [
-                                Icon(
-                                  Icons.brightness_low,
-                                  color: Colors.black,
+                                RaisedButton(
+                                  color: Colors.red,
+                                  onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Light(),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    "Light Mode",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),

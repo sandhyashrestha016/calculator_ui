@@ -43,32 +43,50 @@ class _DarkState extends State<Dark> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: FlatButton(
-                              onPressed: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => Light(),
-                                    ),
+                          child: Row(
+                            children: [
+                              FlatButton(
+                                onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Light(),
                                   ),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.brightness_high,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                    ),
+                                    Text(
+                                      "Light Mode",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              RaisedButton(
+                                color: Colors.red,
+                                onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Dark(),
+                                  ),
+                                ),
+                                child: Text(
+                                  "Dark Mode",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                  ),
-                                  Text(
-                                    "Light Mode",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              )),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(25, 45, 25, 0),
